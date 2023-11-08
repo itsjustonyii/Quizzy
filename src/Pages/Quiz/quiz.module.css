@@ -1,0 +1,71 @@
+body {
+  
+  background-color: rgb(219, 172, 219) ;
+}
+
+.container {
+  background-color: #f3f2f2;
+ width: 40%;
+ margin-left: auto;
+ margin-right: auto;
+ min-height: 400px;
+ margin-top: 40px;
+ text-align: center;
+ padding: 2%;
+ border-radius: 10px;
+ box-sizing: border-box;
+}
+
+.container span {
+  color: palevioletred;
+  font-size: 30px;
+  font-weight: bolder ;
+}
+
+.container p {
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.container h4 {
+  font-size: 20px;
+  letter-spacing: 0.2px;
+  margin-bottom: 20px;
+}
+
+.container ul {
+ display: inline-block; 
+}
+
+.container li {
+list-style: none;
+margin-bottom: 15px;
+background-color: #ffff;
+width: 300px;
+padding: 12px 20px;
+border-radius: 4px;
+font-weight: 500;
+box-shadow: rgb(131, 130, 130) 0.2px 3px ;
+}
+
+.container button {
+ display: flex; 
+ margin-left: 70%;
+border: none;
+background-color: rgb(117, 83, 117);
+padding: 8px 12px;
+border-radius: 4px;
+color: #ffff;
+}
+
+li.option {
+  background: rgb(117, 83, 117);
+  color: white;
+  cursor: pointer;
+}
+
+li.wrongoption {
+  background-color: rgb(219, 52, 52);
+  color: white;
+  cursor: pointer;
+}
