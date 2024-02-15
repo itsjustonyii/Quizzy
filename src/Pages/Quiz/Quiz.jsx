@@ -1,6 +1,6 @@
 import React, { useEffect }from 'react'
 import styles from './quiz.module.css'
-import Result from './result';
+import Result from './Result'
 import AnswerTimer from '../../Components/AnswerTimer/AnswerTimer';
 import { IoMdCheckmark } from "react-icons/io";
 import { BsEmojiSunglasses } from "react-icons/bs";
