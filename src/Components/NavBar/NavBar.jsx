@@ -55,7 +55,7 @@ function NavBar() {
           itemName="quiz"
           activeItem={activeItem}
         />
-         <Link onClick={() => setActiveItem('leaderboard')} to={'/leaderboard'} className={styles.text}>
+         <Link onClick={() => setActiveItem('leaderboard')} to={'/leaderboard'} className={styles.score}>
         <NavItem
           icon={<FaClipboardUser />}
           text="Scores"
@@ -75,7 +75,7 @@ function NavItem({ icon, text, itemName, activeItem }) {
       className={styles.linkContainer}
     >
       <div className={styles.link}>
-        <div >{icon}</div>
+        <div className= {styles.icon}>{icon}</div>
         <div className={styles.text}>{text}</div>
       </div>
       {activeItem === itemName &&(

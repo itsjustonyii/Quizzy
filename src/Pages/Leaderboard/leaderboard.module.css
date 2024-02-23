@@ -18,7 +18,7 @@ table {
       line-height: 40px;
     }
     tr {
-      border: 1px solid rgb(202, 200, 200);
+      border: 1px solid #cac8c8;
       line-height: 30px;
     }
 
@@ -26,3 +26,36 @@ table {
       background-color: rgb(202, 200, 200);
     }
   }
+
+  @media screen and (max-width: 1024px) {
+
+    .overall {
+      margin-top: 14%;
+    }
+
+    table {
+      width: 80%;
+      font-size: 20px;
+
+      th {
+        line-height: 50px;
+      }
+
+  tr {
+    line-height: 40px;
+  }
+}
+  }
+ 
+
+  @media screen and (max-width: 430px) {
+
+    .overall {
+      margin-top: 24%;
+    }
+
+    table {
+      font-size: 16px;
+    }
+     
+}

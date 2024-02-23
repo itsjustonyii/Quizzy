@@ -59,11 +59,10 @@ handleTryAgain, selectRandomQuestions, selectedQuestions}) {
   if (currentQuestion !== selectedQuestions.length - 1) {
       setCurrentQuestion(currentQuestion + 1);
   } else {
-    setShowResult(true);
-    if (isSignedIn) {
-      handleSave();
-    }
+    
+    setShowResult(true) 
   }
+  
   setTimeout(() => {
     setShowTimer(true)
   })
@@ -73,11 +72,11 @@ handleTryAgain, selectRandomQuestions, selectedQuestions}) {
 
 const correctAnswers = result.correctAnswers;
 const comment = (score) => {
-  if (score === 100) {
+  if (score === 50) {
     return result.BestComment;
-  } else if (score >= 70) {
+  } else if (score >= 35) {
     return result.GoodComment;
-  } else if (score >= 50) {
+  } else if (score >= 30) {
     return result.AverageComment;
   }else {
     return result.BadComment;
@@ -92,8 +91,10 @@ const handleTimeOut = () => {
 
 return (
   < div className= {styles.overall}>
-  {!showResult ? 
-    (<div className={styles.container}>
+  {!showResult ?
+  (<> 
+     <p className={styles.p}>Click Next Before your Time Elapses!</p>
+    <div className={styles.container}>
       {showTimer && <AnswerTimer  onTimeOut={handleTimeOut}/>}
       <p><span>{currentQuestion + 1}</span>/{selectedQuestions.length}</p>
       <img className ={styles.img} src={Question} alt='whatsapp'/>
@@ -106,7 +107,8 @@ return (
                            index === answerIdx && !answer? styles.wrongoption:''} 
                            style={{ cursor: answerIdx === null && !revealCorrectAnswer? "pointer" : "not-allowed" }}
                            >
-                {choice} {renderIcon(index)} {revealCorrectAnswer && choice === correctAnswer  && <IoMdCheckmark />}
+                {choice} {renderIcon(index)} {revealCorrectAnswer && choice === correctAnswer  && <IoMdCheckmark className= 
+                {styles.icon}/>}
             </li>
           ))
         }
@@ -116,9 +118,11 @@ return (
       disabled={answerIdx === null}>
         {currentQuestion === selectedQuestions.length - 1 ? "Finish" : "Next"}
 </button>
-</div>):
+</div> 
+</>):
 (
- <Result score={score} comment= {comment} correctAnswers= {correctAnswers} handleTryAgain={handleTryAgain}/> 
+ <Result score={score} comment= {comment} correctAnswers= {correctAnswers} handleTryAgain={handleTryAgain} 
+ handleSave = {handleSave} isSignedIn={isSignedIn}/> 
 )
 }
 </div>

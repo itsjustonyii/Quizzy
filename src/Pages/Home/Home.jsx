@@ -12,7 +12,7 @@ function Home() {
  
   return (
         <div className={styles.half}>
-         <img src= {brain} alt='image of a brain' />
+         <img className= {styles.landing}src= {brain} alt='image of a brain' />
          <div className={styles.body}>
            <h2> CAN YOU IDENTIFY RANDOM PICS IN SECONDS?</h2>
            <button onClick={handleFindOut}>Find Out!</button>

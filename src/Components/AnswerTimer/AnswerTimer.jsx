@@ -5,7 +5,7 @@ function AnswerTimer({ onTimeOut }) {
     const [counter, setCounter] = useState(0);
     const [progress, setProgress] = useState(0);
     const intervalRef = useRef();
-    const duration = 20;
+    const duration = 7;
    useEffect(() => {
     intervalRef.current = setInterval (() => {
     setCounter((cur) => cur + 1)

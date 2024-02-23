@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import styles from './quiz.module.css';
 
-function Result({ score, comment, correctAnswers, handleTryAgain }) {
+function Result({ score, comment, correctAnswers, handleTryAgain, handleSave, isSignedIn }) {
     
 
-    
+    useEffect(() => {
+        if(isSignedIn) {
+        handleSave() };
+    }, []);   
 
     
 

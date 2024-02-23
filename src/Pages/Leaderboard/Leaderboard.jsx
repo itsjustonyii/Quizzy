@@ -2,16 +2,18 @@
 import {useEffect} from 'react';
 import styles from './leaderboard.module.css'
 
-function Leaderboard( {highScores, setHighScores, score} ) {
+function Leaderboard( {highScores, setHighScores } ) {
   useEffect(() => {
     const storedHighScores = JSON.parse(localStorage.getItem('highScores')) || [];
     setHighScores(storedHighScores);
 }, []);
 
+const top10HighScores = highScores.slice(0, 40);
+
   return (
     <div className= {styles.overall}>
-      <p>{score}</p>
-      {highScores.length > 0 && (
+ 
+      {top10HighScores.length > 0 && (
                 <table>
                     <thead>
                         <tr>
@@ -21,9 +23,9 @@ function Leaderboard( {highScores, setHighScores, score} ) {
                         </tr>
                     </thead>
                     <tbody>
-                        {highScores.map((highScore, i) => {
+                        {top10HighScores.map((highScore, i) => {
                             return (
-                                <tr key={`${highScore.score}&{highScore.name}&{i}`}>
+                                <tr key={i}>
                                     <td>{i + 1}</td>
                                     <td>{highScore.name}</td>
                                     <td>{highScore.score}</td>

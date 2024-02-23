@@ -6,7 +6,7 @@
     height: 100vh;
 }
 
-img {
+.landing {
   width: 50%; 
 }
 
@@ -39,3 +39,43 @@ img {
     transition: 0.3s;
 }
 
+@media screen and (max-width: 820px) {
+    
+    .half {
+        width: 100%;
+    } 
+     
+     .landing {
+        display: none;
+     }
+    
+    .body {
+        margin-top: 20%;
+        padding: 30px;
+    }
+
+    .body h2 {
+        font-size: 6rem;
+    }
+
+    .body button {
+        padding: 12px 16px;
+        font-size: 22px;
+    }
+}
+
+@media screen and (max-width: 430px) {
+ .half {
+    width: 100%;
+ } 
+ 
+
+ .body {
+    padding: 20px;
+    margin-top: 28%;
+ }
+
+ .body h2 {
+   font-size: 4rem;
+ }
+}

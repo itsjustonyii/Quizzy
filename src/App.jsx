@@ -1,8 +1,9 @@
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import Quiz from './Pages/Quiz/Quiz'
 import { trivia } from './questions'
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { resultInitialState } from './questions'
+import ScrollToTop from './Components/ScrollToTop';
 import NavBar from './Components/NavBar/NavBar'
 import Home from './Pages/Home/Home'
 import Leaderboard from './Pages/Leaderboard/Leaderboard';
@@ -23,11 +24,15 @@ function App() {
   const [showTimer, setShowTimer] = useState(true);
   const [name, setName] = useState("");
   const [isSignedIn, setIsSignedIn] = useState(false);
-  const [highScores, setHighScores] = useState([]);
-
+  const [highScores, setHighScores] = useState(() => {
+    const storedHighScores = JSON.parse(localStorage.getItem('highScores')) || [];
+    return storedHighScores;
+  });
   const navigate = useNavigate() 
   const score = result.score;
-  console.log(score);
+
+
+ 
 
   const handleSignIn = () => {
     if (name.trim() !== "") {
@@ -46,34 +51,31 @@ function App() {
       tryAgain();
      }
 
-     
-    
      const handleSave = () => {
       const newScore = {
         name: name,
-        score: score,
+        score: result.score
       };
     
-    
-      const newHighScores = [...highScores, newScore].sort((a, b) => b.score - a.score);
-      setHighScores(newHighScores);
-      localStorage.setItem('highScores', JSON.stringify(newHighScores));
+        
+        const newHighScores = [...highScores, newScore].sort((a, b) => b.score - a.score);
+        setHighScores(newHighScores);
+        localStorage.setItem('highScores', JSON.stringify(newHighScores));
+      
     };
     
-    
+        
     const [selectedQuestions, setSelectedQuestions] = useState([]);
     const selectRandomQuestions = () => {
-      // Shuffle the array of questions
       const shuffledQuestions = questions.sort(() => Math.random() - 0.5);
-      // Select the first 10 questions
-      const randomQuestions = shuffledQuestions.slice(0, 5);
+      const randomQuestions = shuffledQuestions.slice(0, 10);
       setSelectedQuestions(randomQuestions);
     };
-    console.log(localStorage.getItem('highScores'));
   
   
   return (
     <div>
+      <ScrollToTop />
       <NavBar />
       <Routes>
        <Route path='/' element={ <Home />} />
@@ -90,7 +92,7 @@ function App() {
   isSignedIn={isSignedIn} handleSave={handleSave} handleTryAgain={handleTryAgain} selectRandomQuestions=
   {selectRandomQuestions} selectedQuestions={selectedQuestions}/>} />
       <Route path='/leaderboard' element={
-      <Leaderboard  highScores={highScores}  setHighScores={setHighScores} score={score}/>} />
+      <Leaderboard  highScores={highScores}  setHighScores={setHighScores} />} />
       </Routes>
       </div>
       

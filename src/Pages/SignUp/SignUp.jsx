@@ -12,11 +12,11 @@ function SignUpForm({name, setName, isSignedIn, handleSignIn}) {
 <>
 {!isSignedIn && (
                  <div className={styles.half}>
-                  <img src= {brain} alt='image of a brain' />
+                  <img src= {brain} alt='image of a brain' className={styles.landing} />
                 <div className={styles.container}>
                     <h3>Sign In to Play</h3>
                     <p>Guess the logo in seconds. Play for free!</p>
-                    <div style={{ display: 'flex'}}>
+                    <div className={styles.adjust}>
                     <input className= {styles.input}
                         value={name}
                         onChange={(e) => setName(e.target.value)}
@@ -25,7 +25,7 @@ function SignUpForm({name, setName, isSignedIn, handleSignIn}) {
                     <div className={`${styles.btn} ${name.trim() === '' && styles.disabled}`}
                     onClick={handleSignIn}
                     disabled= {name.trim() !== ""}>
-                      <FaRegCirclePlay size={20}/>
+                      <FaRegCirclePlay size={20} className={styles.play}/>
                       <p>PlayNow</p>
                     </div>
                     </div>
