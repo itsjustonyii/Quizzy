@@ -681,7 +681,7 @@ export const trivia = {
       Choices: [
         "cherry",
         "plum",
-        "kiwi",
+        "Kiwi",
         "Pomegranate",
       ],
       correctAnswer: "Kiwi", 
