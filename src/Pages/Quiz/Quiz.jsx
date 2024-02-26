@@ -7,7 +7,7 @@ import { BsEmojiSunglasses } from "react-icons/bs";
 import { FaSadCry } from "react-icons/fa";
 
 
-function Quiz({questions, answerIdx, currentQuestion, setCurrentQuestion, Question, Choices, correctAnswer, 
+function Quiz({ answerIdx, currentQuestion, setCurrentQuestion, Question, Choices, correctAnswer, 
   setAnswerIdx, answer, setAnswer, result, setResult, showResult, setShowResult, isClicked, setIsClicked,
   revealCorrectAnswer, setRevealCorrectAnswer, pop, setPop, showTimer, setShowTimer, score, handleSave, isSignedIn,
 handleTryAgain, selectRandomQuestions, selectedQuestions}) {
