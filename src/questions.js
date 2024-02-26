@@ -420,7 +420,7 @@ export const trivia = {
         "Fordmustang",
         "Tesla",
       ],
-      correctAnswer: "Volswagen", 
+      correctAnswer: "Volkswagen", 
     }, 
 
     {

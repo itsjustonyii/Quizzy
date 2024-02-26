@@ -239,6 +239,10 @@ cursor: pointer;
   .overall {
     padding: 4% 0 2% 0;
   }
+
+  .container {
+    padding: 2% 15%;
+  }
   
   .result {
    width: 90%;
