@@ -38,26 +38,26 @@ function NavBar() {
 
       <div className={styles.lin}>
         <NavItem
-          icon={<IoMdHome size={30}/>}
+          icon={<IoMdHome size={25}/>}
           text="Home"
           itemName="home"
           activeItem={activeItem}
         />
         <NavItem
-          icon={<IoMdPersonAdd size={30}/>}
+          icon={<IoMdPersonAdd size={25}/>}
           text="Sign In"
           itemName="signin"
           activeItem={activeItem}
         />
         <NavItem
-          icon={<MdQuiz size={30}/>}
+          icon={<MdQuiz size={25}/>}
           text="Quiz"
           itemName="quiz"
           activeItem={activeItem}
         />
          <Link onClick={() => setActiveItem('leaderboard')} to={'/leaderboard'} className={styles.score}>
         <NavItem
-          icon={<FaClipboardUser size={30}/>}
+          icon={<FaClipboardUser size={25}/>}
           text="Scores"
           itemName="leaderboard"
           activeItem={activeItem}
